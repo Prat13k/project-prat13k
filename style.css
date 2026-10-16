@@ -1,45 +1,80 @@
-/* --- RESET & BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; 
+/* =========================================
+   1. RESET & BASE VARIABLES
+   ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+:root {
+    /* arXiv meets Terminal Color Palette */
+    --bg-color: #fdfdfd;       
+    --text-main: #1a1a1a;      
+    --text-muted: #666666;     
+    --accent-blue: #2a4d8d;    
+    --term-green: #008f11;     
+    --border-color: #eaeaea;   
+    --strip-bg: #f0f0f2;       /* Darker shade for contact strip */
+    
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Times New Roman", "Inter", serif;
-    color: #2d2d2d;
-    background: #f6f9f6;
-    line-height: 1.5;
-    text-align: center;
-    text-align: justify;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background: var(--bg-color);
+    line-height: 1.6;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
-    max-width: 1100px;
+    max-width: 800px; /* Narrow column for arXiv-style reading */
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.site-logo {
-    width : 30px;
-    height: 30px;
-    margin-bottom: 5px;
-}
-
-/* --- TYPOGRAPHY --- */
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
 h1, h2, h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
 }
 
-h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 16px; }
-h2 { font-size: 1.8rem; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px; margin-bottom: 24px; }
-h3 { font-size: 1.2rem; margin: 24px 0 8px; }
+h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 16px; }
+h2 { 
+    font-family: var(--font-mono);
+    font-size: 1.1rem; 
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 8px; 
+    margin-bottom: 24px; 
+}
+h3 { font-size: 1.2rem; margin: 24px 0 12px; }
 
-a { color: #4a5b8f; text-decoration: none; transition: color 0.15s; }
-a:hover { color: #2d3b6b; text-decoration: underline; }
+a { 
+    color: var(--accent-blue); 
+    text-decoration: none; 
+    transition: color 0.15s ease; 
+}
+a:hover { color: #1b335f; text-decoration: underline; }
 
-/* --- HEADER --- */
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
 header.site {
-    padding: 16px 0 12px;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 50px;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 60px;
 }
 
 header.site .wrap {
@@ -47,119 +82,316 @@ header.site .wrap {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
 }
 
+/* Text Logo (Terminal Prompt Style) */
 .brand {
-    font-family: "Playfair Display", serif;
-    font-size: 1.6rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.brand h1 {
+    font-family: var(--font-mono); 
+    font-size: 1.2rem;             
     font-weight: 600;
     letter-spacing: -0.03em;
-    color: #2d2d2d;
+    margin-bottom: 0;              
+    color: var(--text-main);
+    transition: color 0.2s ease;
 }
 
-.brand:hover { text-decoration: none; color: #4a5b8f; }
+.prompt-symbol {
+    color: var(--term-green);      
+    font-weight: 700;
+}
+
+.brand:hover h1 { color: var(--accent-blue); text-decoration: none; }
+.brand:hover .prompt-symbol { color: var(--accent-blue); }
+
+/* Navigation Links */
+nav.primary {
+    display: flex;
+    gap: 40px; 
+}
 
 nav.primary a {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #2d2d2d;
-    margin-left: 0px;
-    font-weight: 500;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    text-decoration: none;
 }
 
-nav.primary a:hover { text-decoration: none; color: #4a5b8f; }
+nav.primary a:hover { 
+    color: var(--accent-blue); 
+}
 
 nav.primary a[aria-current="page"] {
-    color: #4a5b8f;
-    border-bottom: 2px solid #4a5b8f;
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
     padding-bottom: 4px;
 }
 
-/* --- HERO --- */
-.hero { margin-bottom: 60px; }
-
-.doc {
-    font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
-    font-size: 0.8rem;
-    color: #6b6b6b;
-    background: #f0eeea;
-    padding: 12px 18px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    border-left: 3px solid #4a5b8f; 
+/* =========================================
+   4. HERO / NEOFETCH SECTION
+   ========================================= */
+.hero {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;        
+    gap: 40px;                 
+    margin-bottom: 60px;
 }
 
-.tok-punct { color: #8b8b8b; }
-.tok-tag { color: #b7410e; }
-.tok-str { color: #2d2d2d; }
+/* The Info Terminal Block */
+.doc {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.tok-punct { color: var(--term-green); font-weight: bold; }
+.tok-tag { color: var(--accent-blue); font-weight: 600; margin-right: 8px; }
+.tok-str { color: var(--text-main); }
+
+/* Right Side Wrapper (Image + Button) */
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    flex-shrink: 0;
+    width: fit-content;
+}
+
+/* The ASCII Art Image */
+.ascii-face {
+    width: 100%;            
+    overflow: hidden;        
+    text-align: right;
+}
+
+.ascii-placeholder {
+    font-family: var(--font-mono);
+    font-size: 6px;          
+    line-height: 6px;        
+    color: var(--text-main);
+    white-space: pre;        
+    margin: 0;
+    padding: 0;
+}
+
+/* The Resume Download Button */
+.resume-btn {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 10px 0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    display: inline-block;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.resume-btn:hover {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(42, 77, 141, 0.3); 
+    cursor: pointer;
+}
+
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
+.about-section {
+    margin-bottom: 60px;
+    max-width: 750px; 
+}
+
+.terminal-command {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.prompt {
+    color: var(--term-green);
+    font-weight: bold;
+    margin-right: 8px;
+}
 
 .lede {
-   font-size: 1.15rem;
-   color: #6b6b6b;
-   max-width: 680px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.7;
+    text-align: justify;
+    font-family: var(--font-mono);
 }
 
-/* --- SECTIONS --- */
+/* =========================================
+   6. PROJECTS (Command List)
+   ========================================= */
 .section { margin: 60px 0; }
 
-.section-head {
-   display: flex;
-   justify-content: space-between;
-   align-items: baseline;
-   flex-wrap: wrap;
-   gap: 8px;
+.command-list {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 12px; 
+    margin-bottom: 40px;
 }
 
-.see-all {
-   font-size: 0.85rem;
-   color: #6b6b6b;
-   letter-spacing: 0.02em;
+.command-list a {
+    display: inline-block;
+    font-family: var(--font-mono);
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
-.see-all:hover { color: #4a5b8f; }
-
-/* --- CONTACT --- */
-.contact-block {
-  background: #f4f2ed;
-  padding: 15px 10px;
-  border-radius: 16px;
-  text-align: center;
+.command-list a:hover {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.contact-block h3 {text-align: left; text-decoration: bold;}
-
-.contact-block p { margin-bottom: 16px; }
-.row2 { display: flex; flex-wrap: wrap; gap: 40px; margin-left: 38%; margin-right: 38%}
-.row2 a { font-weight: 500; }
-
-/* --- FOOTER --- */
-footer {
-   text-align: center;
-   margin-top: 50px;
-   padding-top: 20px;
-   border-top: 1px solid #ccc;
-   font-size: 14px;
-   color: #777;
+.command-list a:hover::after {
+    content: "_";
+    animation: blink 1s step-end infinite;
+    margin-left: 5px;
 }
 
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =========================================
+   7. CONTACT SECTION
+   ========================================= */
+.contact-strip {
+    background-color: var(--strip-bg); 
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue); 
+    border-radius: 0 8px 8px 0;
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+}
+
+.contact-strip h2 {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 4px;
+}
+
+.contact-strip p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: var(--term-green); 
+    text-decoration: none;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
 footer.site {
-  border-top: 1px solid #e5e5e5;
-  margin-top: 80px;
-  padding-top: 28px;
-  padding-bottom: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 80px;
+    padding-top: 28px;
+    padding-bottom: 40px;
 }
 
 footer.site .wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-size: 0.85rem;
-  color: #8b8b8b;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
-footer.site a { color: #6b6b6b; }
+footer.site a { color: var(--text-muted); }
+footer.site a:hover { color: var(--accent-blue); }
+
+/* =========================================
+   9. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    header.site .wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav.primary {
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .hero {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .right-side {
+        width: 100%; 
+        margin-top: 20px;
+        align-items: center;
+    }
+    
+    .ascii-face {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .ascii-placeholder {
+        font-size: 5px; /* Slightly smaller on mobile to fit */
+        line-height: 5px;
+    }
+}
