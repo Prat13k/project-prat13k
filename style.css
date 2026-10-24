@@ -8,14 +8,14 @@
 }
 
 :root {
-    /* Black & Orange Terminal Color Palette */
-    --bg-color: #000000;       /* Pure black background */
-    --text-main: #ff8c00;      /* Dark orange text */
-    --text-muted: #b36b00;     /* Muted/dimmer orange for secondary text */
-    --accent-blue: #ff8c00;    /* Changed to orange for links/accents */
-    --term-green: #ff8c00;     /* Changed terminal prompt to orange */
-    --border-color: #333333;   /* Dark grey borders */
-    --strip-bg: #111111;       /* Darker grey for contact strip background */
+    /* arXiv meets Terminal Color Palette */
+    --bg-color: #fdfdfd;       
+    --text-main: #1a1a1a;      
+    --text-muted: #666666;     
+    --accent-blue: #2a4d8d;    
+    --term-green: #008f11;     
+    --border-color: #eaeaea;   
+    --strip-bg: #f0f0f2;       /* Darker shade for contact strip */
     
     --font-body: 'Inter', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
@@ -66,7 +66,7 @@ a {
     text-decoration: none; 
     transition: color 0.15s ease; 
 }
-a:hover { color: #ffaa33; text-decoration: underline; } /* Lighter orange on hover */
+a:hover { color: #1b335f; text-decoration: underline; }
 
 /* =========================================
    3. HEADER & NAVIGATION
@@ -107,8 +107,8 @@ header.site .wrap {
     font-weight: 700;
 }
 
-.brand:hover h1 { color: #ffaa33; text-decoration: none; }
-.brand:hover .prompt-symbol { color: #ffaa33; }
+.brand:hover h1 { color: var(--accent-blue); text-decoration: none; }
+.brand:hover .prompt-symbol { color: var(--accent-blue); }
 
 /* Navigation Links */
 nav.primary {
@@ -125,7 +125,7 @@ nav.primary a {
 }
 
 nav.primary a:hover { 
-    color: #ffaa33; 
+    color: var(--accent-blue); 
 }
 
 nav.primary a[aria-current="page"] {
@@ -208,9 +208,9 @@ nav.primary a[aria-current="page"] {
 
 .resume-btn:hover {
     background-color: var(--accent-blue);
-    color: #000000; /* Black text when hovering over orange button */
+    color: #ffffff;
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.3); /* Orange glow */
+    box-shadow: 0 0 10px rgba(42, 77, 141, 0.3); 
     cursor: pointer;
 }
 
