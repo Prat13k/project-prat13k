@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedupr | Blazing Fast Duplicate Remover in Rust</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="description" content="Dedupr is a zero-dependency Rust CLI that finds and removes duplicate files instantly using BLAKE3 hashing.">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="prompt-symbol">➜</span> ~/dedupr
+            </a>
+            <nav class="primary-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="projects.html">Project</a>
+                <a href="https://github.com/prat13k/dedupr" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>Dedupr</h1>
+            <h2 class="subtitle">Find and Destroy Duplicates. Instantly.</h2>
+            <p class="desc">A zero-dependency Rust CLI that scans your drives, identifies exact duplicate files using BLAKE3 cryptographic hashing, and reclaims your disk space in milliseconds.</p>
+            
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">[ Download Binary ]</a>
+                <a href="#architecture" class="btn btn-secondary">[ How it Works ]</a>
+            </div>
+        </section>
+
+        <!-- TERMINAL SIMULATION -->
+        <section class="terminal-window">
+            <div class="term-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <div class="term-title">dedupr -- scan</div>
+            </div>
+            <div class="term-body">
+                <p><span class="term-green">➜ ~</span> <span class="text-white">dedupr scan /home/user/Downloads</span></p>
+                <p class="term-muted">Scanning directory...</p>
+                <p class="term-muted">Hashing files using BLAKE3...</p>
+                <br>
+                <pre class="code-output">
+<span class="hash-color">[BLAKE3: 3f7a9b...]</span> <span class="file-path">/home/user/Downloads/setup_v1.exe</span>
+<span class="hash-color">[BLAKE3: 3f7a9b...]</span> <span class="file-path">/home/user/Downloads/setup_v1_copy.exe</span>
+<span class="hash-color">[BLAKE3: 9c2d1e...]</span> <span class="file-path">/home/user/Downloads/document.pdf</span>
+
+<span class="success-text">Found 2 duplicate groups.</span>
+<span class="success-text">Potential space to reclaim: 1.4 GB</span>
+                </pre>
+                <p><span class="term-green">➜ ~</span> <span class="text-white">dedupr remove --all</span></p>
+                <p class="removal-text">Deleted: /home/user/Downloads/setup_v1_copy.exe</p>
+                <p class="success-text">✔ Freed 1.4 GB in 0.12 seconds.</p>
+                <p><span class="term-green">➜ ~</span> <span class="cursor">_</span></p>
+            </div>
+        </section>
+
+        <!-- ARCHITECTURE SECTION -->
+        <section id="architecture" class="arch-section">
+            <h2>Under the Hood</h2>
+            
+            <details>
+                <summary>1. BLAKE3 Hashing Engine</summary>
+                <div class="details-content">
+                    <p>Dedupr doesn't just check file names or sizes; it checks the exact bytes. By utilizing the BLAKE3 cryptographic hash function, Dedupr is able to hash files at speeds exceeding 1 GB/s per core, making it exponentially faster than older tools using MD5 or SHA-256.</p>
+                </div>
+            </details>
+            
+            <details>
+                <summary>2. Zero Dependencies (Pure Rust)</summary>
+                <div class="details-content">
+                    <p>Compiled natively with Rust, Dedupr drops a single, portable ~500KB executable. No Python runtimes, no Node modules, no Docker. It utilizes Rust's memory safety and multi-threading via `rayon` to scan multiple directories simultaneously without memory leaks.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>3. Safe & Deterministic Removal</summary>
+                <div class="details-content">
+                    <p>Safety is paramount. Dedupr operates in a dry-run state by default. It mathematically guarantees that files sharing a hash are exact duplicates before any deletion occurs. You can preview deletions before committing them to disk.</p>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Built with Rust <span class="term-green">♥</span> by Prat13k</p>
+        <p class="copyright">© 2024 Dedupr Project. Open Source.</p>
+    </footer>
+
+</body>
+</html>
