@@ -1,104 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dedupr | Blazing Fast Duplicate Remover in Rust</title>
-    
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="style.css">
-    
-    <meta name="description" content="Dedupr is a zero-dependency Rust CLI that finds and removes duplicate files instantly using BLAKE3 hashing.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dedupr - A blazing fast duplicate file finder built with Rust and BLAKE3.">
+    <title>Dedupr | Systems & Data Engineering</title>
+    <link rel="stylesheet" href="style.css">		
 </head>
-<body>
 
-    <!-- NAVIGATION BAR -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="brand">
-                <span class="prompt-symbol">➜</span> ~/dedupr
-            </a>
-            <nav class="primary-nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="projects.html">Project</a>
-                <a href="https://github.com/prat13k/dedupr" target="_blank">GitHub</a>
+<body>
+    <!-- SAME HEADER AS INDEX -->
+    <header class="site">
+        <div class="wrap">
+            <a class="brand" href="index.html">
+                <h1><span class="prompt-symbol">~/</span>pratik</h1>
+            </a>				
+            <nav class="primary">
+                <a href="index.html">Home</a>
+                <a href="dedupr.html" aria-current="page">Projects</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
-
-    <main class="wrap">
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <h1>Dedupr</h1>
-            <h2 class="subtitle">Find and Destroy Duplicates. Instantly.</h2>
-            <p class="desc">A zero-dependency Rust CLI that scans your drives, identifies exact duplicate files using BLAKE3 cryptographic hashing, and reclaims your disk space in milliseconds.</p>
+        
+    <main>    				
+        <div class="wrap">
             
-            <div class="btn-group">
-                <a href="#" class="btn btn-primary">[ Download Binary ]</a>
-                <a href="#architecture" class="btn btn-secondary">[ How it Works ]</a>
-            </div>
-        </section>
-
-        <!-- TERMINAL SIMULATION -->
-        <section class="terminal-window">
-            <div class="term-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-                <div class="term-title">dedupr -- scan</div>
-            </div>
-            <div class="term-body">
-                <p><span class="term-green">➜ ~</span> <span class="text-white">dedupr scan /home/user/Downloads</span></p>
-                <p class="term-muted">Scanning directory...</p>
-                <p class="term-muted">Hashing files using BLAKE3...</p>
-                <br>
-                <pre class="code-output">
-<span class="hash-color">[BLAKE3: 3f7a9b...]</span> <span class="file-path">/home/user/Downloads/setup_v1.exe</span>
-<span class="hash-color">[BLAKE3: 3f7a9b...]</span> <span class="file-path">/home/user/Downloads/setup_v1_copy.exe</span>
-<span class="hash-color">[BLAKE3: 9c2d1e...]</span> <span class="file-path">/home/user/Downloads/document.pdf</span>
-
-<span class="success-text">Found 2 duplicate groups.</span>
-<span class="success-text">Potential space to reclaim: 1.4 GB</span>
-                </pre>
-                <p><span class="term-green">➜ ~</span> <span class="text-white">dedupr remove --all</span></p>
-                <p class="removal-text">Deleted: /home/user/Downloads/setup_v1_copy.exe</p>
-                <p class="success-text">✔ Freed 1.4 GB in 0.12 seconds.</p>
-                <p><span class="term-green">➜ ~</span> <span class="cursor">_</span></p>
-            </div>
-        </section>
-
-        <!-- ARCHITECTURE SECTION -->
-        <section id="architecture" class="arch-section">
-            <h2>Under the Hood</h2>
-            
-            <details>
-                <summary>1. BLAKE3 Hashing Engine</summary>
-                <div class="details-content">
-                    <p>Dedupr doesn't just check file names or sizes; it checks the exact bytes. By utilizing the BLAKE3 cryptographic hash function, Dedupr is able to hash files at speeds exceeding 1 GB/s per core, making it exponentially faster than older tools using MD5 or SHA-256.</p>
+            <!-- DASHBOARD HERO (Matches the image vibe) -->
+            <section class="project-header">
+                <div class="terminal-command" style="margin-bottom: 20px;">
+                    <span class="prompt">$</span> cat projects/dedupr.md
                 </div>
-            </details>
-            
-            <details>
-                <summary>2. Zero Dependencies (Pure Rust)</summary>
-                <div class="details-content">
-                    <p>Compiled natively with Rust, Dedupr drops a single, portable ~500KB executable. No Python runtimes, no Node modules, no Docker. It utilizes Rust's memory safety and multi-threading via `rayon` to scan multiple directories simultaneously without memory leaks.</p>
+                
+                <div class="dashboard-grid">
+                    <!-- LEFT COLUMN: STATS -->
+                    <div class="dash-col left">
+                        <div class="stat-box">
+                            <div class="stat-val">100%</div>
+                            <div class="stat-label">Rust</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">1.5 GB/s</div>
+                            <div class="stat-label">BLAKE3 Hash</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">0</div>
+                            <div class="stat-label">Dependencies</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">~500KB</div>
+                            <div class="stat-label">Binary Size</div>
+                        </div>
+                    </div>
+
+                    <!-- CENTER COLUMN: MAIN VISUAL -->
+                    <div class="dash-col center">
+                        <div class="term-visual-box">
+                            <div class="term-header-mini">
+                                <span>dedupr --scan-tree</span>
+                            </div>
+                            <div class="term-content-mini">
+<pre>
+<span class="tok-tag">root/</span>
+├── <span class="tok-str">downloads/</span>
+│   ├── file_1.zip  <span class="hash-color">[BLAKE3: 3f7a...]</span>
+│   └── file_1_copy.zip <span class="hash-color">[BLAKE3: 3f7a...]</span> <span class="term-green">← DUPLICATE</span>
+├── <span class="tok-str">documents/</span>
+│   └── report.pdf  <span class="hash-color">[BLAKE3: 9c2d...]</span>
+└── <span class="tok-str">images/</span>
+    └── screenshot.png <span class="hash-color">[BLAKE3: 4b1e...]</span>
+
+<span class="term-green">✔ Scan complete in 0.04s</span>
+<span class="removal-text">✖ Deleted 1 duplicate (1.2 GB saved)</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: FEATURES -->
+                    <div class="dash-col right">
+                        <div class="feature-box">
+                            <div class="feature-title">◆ DATA ENGINEERING</div>
+                            <p>Multi-threaded directory traversal using Rust's `rayon` crate.</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-title">◆ CRYPTOGRAPHY</div>
+                            <p>BLAKE3 Hashing for mathematically zero-collision identification.</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-title">◆ SYSTEMS</div>
+                            <p>Memory safe. Zero garbage collection. Compiled to native binary.</p>
+                        </div>
+                    </div>
                 </div>
-            </details>
+            </section>
 
-            <details>
-                <summary>3. Safe & Deterministic Removal</summary>
-                <div class="details-content">
-                    <p>Safety is paramount. Dedupr operates in a dry-run state by default. It mathematically guarantees that files sharing a hash are exact duplicates before any deletion occurs. You can preview deletions before committing them to disk.</p>
+            <!-- ABOUT THE PROJECT (The "Sell") -->
+            <section class="about-section" style="margin-top: 60px;">
+                <div class="terminal-command">
+                    <span class="prompt">$</span> cat abstract.md
                 </div>
-            </details>
-        </section>
-    </main>
+                <p class="lede">
+                    Dedupr is a systems-level tool designed to solve the problem of storage bloat. Traditional duplicate finders rely on slow file I/O or insecure MD5 hashing. Dedupr leverages <strong>Rust</strong> for memory-safe concurrency and <strong>BLAKE3</strong> for lightning-fast cryptographic hashing. 
+                    <br><br>
+                    By grouping files by size first, and then hashing them concurrently, Dedupr eliminates the O(N²) performance bottleneck of naive comparison algorithms. It is a demonstration of low-level systems programming applied to real-world data management.
+                </p>
+            </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Built with Rust <span class="term-green">♥</span> by Prat13k</p>
-        <p class="copyright">© 2024 Dedupr Project. Open Source.</p>
-    </footer>
+            <!-- ARCHITECTURE DETAILS -->
+            <section class="section">
+                <div class="terminal-command">
+                    <span class="prompt">$</span> cat architecture.txt
+                </div>
+                
+                <div class="arch-list">
+                    <div class="arch-item">
+                        <div class="arch-title">1. Directory Traversal</div>
+                        <p>Uses `walkdir` to build an in-memory representation of the file system, grouping files by exact byte size to immediately discard non-matches.</p>
+                    </div>
+                    <div class="arch-item">
+                        <div class="arch-title">2. Concurrent Hashing</div>
+                        <p>Files with matching sizes are passed to a thread pool via `rayon`. BLAKE3 splits the file into chunks and hashes them in parallel, saturating the CPU and disk I/O.</p>
+                    </div>
+                    <div class="arch-item">
+                        <div class="arch-title">3. Safe Removal</div>
+                        <p>Hashes are compared in a HashMap. Only files with a 100% cryptographic match are flagged. The CLI prompts the user before executing the `std::fs::remove_file` command.</p>
+                    </div>
+                </div>
+            </section>
 
+        </div>
+    </main>			
+        
+    <!-- SAME FOOTER AS INDEX -->
+    <footer class="site">
+        <div class="wrap">
+            <span>Built from scratch — HTML, CSS <a href="#">Source</a></span>
+            <span>&copy; 2026 Pratik · last updated September 2026</span>
+        </div>
+    </footer>	
 </body>
 </html>

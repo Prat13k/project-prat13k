@@ -395,3 +395,147 @@ footer.site a:hover { color: var(--accent-blue); }
         line-height: 5px;
     }
 }
+
+/* =========================================
+   PROJECT DASHBOARD (New Additions)
+   ========================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* LEFT: STAT BOXES */
+.dash-col.left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-box {
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.stat-val {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-orange);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* CENTER: TERMINAL VISUAL */
+.term-visual-box {
+    border: 1px solid var(--border-color);
+    background: #000;
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.term-header-mini {
+    background: #111;
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.term-content-mini {
+    padding: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    overflow-x: auto;
+    flex-grow: 1;
+}
+
+.term-content-mini pre {
+    margin: 0;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* RIGHT: FEATURE BOXES */
+.dash-col.right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-box {
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.feature-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--term-green);
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ARCHITECTURE LIST */
+.arch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.arch-item {
+    border-left: 2px solid var(--accent-orange);
+    padding-left: 15px;
+}
+
+.arch-title {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.arch-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Mobile Responsiveness for Dashboard */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+    
+    .dash-col.left {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .stat-box {
+        flex: 1 1 45%;
+    }
+}
