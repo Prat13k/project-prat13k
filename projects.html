@@ -3,42 +3,65 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal technical site of Pratik.">
-    <title>Pratik Patil</title>
+    <title>Projects | Pratik Patil</title>
     <link rel="stylesheet" href="style.css">		
 </head>
-
 <body>
     <header class="site">
         <div class="wrap">
             <a class="brand" href="index.html">
                 <h1><span class="prompt-symbol">~/</span>pratik</h1>
             </a>				
-            
             <nav class="primary">
                 <a href="index.html">Home</a>
                 <a href="projects.html" aria-current="page">Projects</a>
-<!--            <a href="research.html">Research</a> 		-->
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
-    
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-          <nav class="command-list">
-          	<a href="dedupr.html">› Dedupr</a>
-                <a href="#">› Analysis Before Wicket</a>
-                <a href="#">› Polymorph</a>
-          </nav>
-    </section>
-    
+        
+    <main>    				
+        <div class="wrap">
+            <div class="terminal-command">
+                <span class="prompt">$</span> ls -la ~/projects
+            </div>
+
+            <div class="project-list">
+                <!-- PROJECT 1 -->
+                <a href="dedupr.html" class="project-card">
+                    <div>
+                        <div class="project-card-title">Dedupr</div>
+                        <div class="project-card-desc">Rust · BLAKE3 · CLI Tool</div>
+                    </div>
+                    <div style="font-family: var(--font-mono); color: var(--text-muted);">→</div>
+                </a>
+
+                <!-- PROJECT 2 -->
+                <a href="#" class="project-card">
+                    <div>
+                        <div class="project-card-title">Analysis Before Wicket</div>
+                        <div class="project-card-desc">Data Science · Web App · Cricket Analytics</div>
+                    </div>
+                    <div style="font-family: var(--font-mono); color: var(--text-muted);">→</div>
+                </a>
+
+                <!-- PROJECT 3 -->
+                <a href="#" class="project-card">
+                    <div>
+                        <div class="project-card-title">Polymorph</div>
+                        <div class="project-card-desc">Systems · Python · Architecture</div>
+                    </div>
+                    <div style="font-family: var(--font-mono); color: var(--text-muted);">→</div>
+                </a>
+            </div>
+        </div>
+    </main>			
+        
     <footer class="site">
         <div class="wrap">
-            <span>Built from scratch — HTML, CSS <a href="link to github repo">Source</a></span>
-            <span>&copy; 2026 Pratik · last updated September 2026</span>
+            <span>Built from scratch — HTML, CSS <a href="https://github.com/Prat13k/project-prat13k">Source</a></span>
+            <span>&copy; 2026 Pratik</span>
         </div>
     </footer>	
 </body>
-</html>			
-
+</html>
