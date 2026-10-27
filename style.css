@@ -137,8 +137,8 @@ footer.site a:hover { color: var(--accent-blue); }
 
 .ascii-placeholder {
     font-family: var(--font-mono);
-    font-size: 3.5px; /* Scaled down to fit */
-    line-height: 3.5px;        
+    font-size: 6.5px; /* Scaled down to fit */
+    line-height: 6.5px;        
     color: var(--text-main);
     white-space: pre;        
     margin: 0;
@@ -326,6 +326,58 @@ footer.site a:hover { color: var(--accent-blue); }
 .arch-item { border-left: 2px solid var(--accent-blue); padding-left: 15px; }
 .arch-title { font-family: var(--font-mono); font-weight: bold; margin-bottom: 5px; }
 .arch-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* =========================================
+   6. CONTACT STRIP (Restored)
+   ========================================= */
+.contact-strip {
+    background-color: var(--strip-bg); 
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue); 
+    border-radius: 0 8px 8px 0;
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.contact-strip h2 {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 4px;
+}
+
+.contact-strip p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: var(--term-green); 
+    text-decoration: none;
+}
 
 @media (max-width: 768px) {
     .hero { flex-direction: column; }
