@@ -22,47 +22,48 @@
         
     <main>    				
         <div class="wrap">
-            <section class="project-header">
-                <div class="terminal-command" style="margin-bottom: 24px;">
-                    <span class="prompt">$</span> cat projects/dedupr.md
-                </div>
+            
+            <!-- 1. THE WIDE TERMINAL COMMAND -->
+            <div class="terminal-command" style="margin-bottom: 20px; font-size: 1rem;">
+                <span class="prompt">$</span> cat projects/dedupr.md
+            </div>
+            
+            <!-- 2. THE DASHBOARD GRID -->
+            <div class="dashboard-grid">
                 
-                <!-- DASHBOARD GRID -->
-                <div class="dashboard-grid">
-                    
-                    <!-- LEFT COLUMN: STATS -->
-                    <div class="dash-col left">
-                        <div class="stat-box">
-                            <div class="stat-val">100%</div>
-                            <div class="stat-label">Rust</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-val">BLAKE3</div>
-                            <div class="stat-label">Hashing</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-val">0</div>
-                            <div class="stat-label">Dependencies</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-val">~500KB</div>
-                            <div class="stat-label">Binary Size</div>
-                        </div>
+                <!-- LEFT COLUMN: STATS -->
+                <div class="dash-col left">
+                    <div class="stat-box">
+                        <div class="stat-val">100%</div>
+                        <div class="stat-label">Rust</div>
                     </div>
+                    <div class="stat-box">
+                        <div class="stat-val">BLAKE3</div>
+                        <div class="stat-label">Hashing</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val">0</div>
+                        <div class="stat-label">Dependencies</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val">~500KB</div>
+                        <div class="stat-label">Binary Size</div>
+                    </div>
+                </div>
 
-                    <!-- CENTER COLUMN (ACTUAL TERMINAL OUTPUT) -->
-                    <div class="dash-col center">
-                        <div class="term-visual-box">
-                            <div class="term-header-mini">
-                                <span>bash - ./target/debug/dedupr-cli</span>
-                            </div>
-                            <div class="term-content-mini">
+                <!-- CENTER COLUMN (ACTUAL TERMINAL OUTPUT) -->
+                <div class="dash-col center">
+                    <div class="term-visual-box">
+                        <div class="term-header-mini">
+                            <span>bash - ./target/debug/dedupr-cli</span>
+                        </div>
+                        <div class="term-content-mini">
 <pre>
-<span style="color: #888;">$ cargo run -- --path /home/prat13k/Downloads</span>
-   Compiling dedupr-core v0.1.0
-   Compiling dedupr-i18n v0.1.0
-   Compiling dedupr-cli v0.1.0
-    Finished `dev` profile in 8.04s
+<span style="color: #888;">$ cargo run -- --path /home/username/folder</span>
+Compiling dedupr-core v0.1.0
+Compiling dedupr-i18n v0.1.0
+Compiling dedupr-cli v0.1.0
+Finished `dev` profile in 8.04s
 
 <span style="color: #ff8c00;">Found ⁨82⁩ duplicate groups.</span>
 
@@ -77,34 +78,33 @@
 <span style="color: #00ff41;">Hash: 5e07abfa</span> (2 files)
 /home/.../formats/pdf/pandoc/biblio-config.tex
 /home/.../formats/beamer/pandoc/biblio-config.tex
-
+	
 <span style="color: #888;">... (79 more groups hidden) ...</span>
 
-<span style="color: #ff8c00;">Potential space savings: ⁨2014649⁩ bytes.</span>
+<span style="color: #ff8c00;">Potential space savings: ⁬2014649⁩ bytes.</span>
 </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RIGHT COLUMN: FEATURES -->
-                    <div class="dash-col right">
-                        <div class="feature-box">
-                            <div class="feature-title">◆ FILE OPERATIONS</div>
-                            <p>Safe execution modes: <strong>Dry-run</strong>, Hard-link generation, and complete Deletion.</p>
-                        </div>
-                        <div class="feature-box">
-                            <div class="feature-title">◆ DATA FORMATS</div>
-                            <p>Exportable results in standard <strong>Text</strong>, structured <strong>JSON</strong>, and streamable <strong>JSONL</strong>.</p>
-                        </div>
-                        <div class="feature-box">
-                            <div class="feature-title">◆ INTERNATIONALIZATION</div>
-                            <p>Built-in <code>i18n</code> crate supporting English, Hindi, French, Spanish, and Chinese.</p>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- ABOUT THE PROJECT -->
+                <!-- RIGHT COLUMN: FEATURES -->
+                <div class="dash-col right">
+                    <div class="feature-box">
+                        <div class="feature-title">◆ FILE OPERATIONS</div>
+                        <p>Safe execution modes: <strong>Dry-run</strong>, <strong>Hard-link generation</strong>, and complete <strong>Deletion</strong>.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">◆ DATA FORMATS</div>
+                        <p>Exportable results in standard <strong>Text</strong>, structured <strong>JSON</strong>, and streamable <strong>JSONL</strong>.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">◆ INTERNATIONALIZATION</div>
+                        <p>Built-in <code>i18n</code> crate supporting <strong>English</strong>, <strong>Hindi</strong>, <strong>French</strong>, <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>Chinese</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ABOUT THE PROJECT (ABSTRACT) -->
             <section class="about-section" style="margin-top: 60px;">
                 <div class="terminal-command">
                     <span class="prompt">$</span> cat abstract.md
@@ -116,7 +116,7 @@
                 </p>
             </section>
 
-            <!-- ARCHITECTURE -->
+            <!-- 4. UNDER THE HOOD (ARCHITECTURE) -->
             <section class="section" style="margin-top: 60px;">
                 <div class="terminal-command">
                     <span class="prompt">$</span> cat architecture.txt
@@ -137,6 +137,7 @@
                     </div>
                 </div>
             </section>
+
         </div>
     </main>			
         

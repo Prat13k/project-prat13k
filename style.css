@@ -30,7 +30,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* FIX: Standardized Wrapper for alignment */
+/* Standardized Wrapper for alignment */
 .wrap {
     max-width: 900px;
     margin: 0 auto;
@@ -119,7 +119,7 @@ footer.site a:hover { color: var(--accent-blue); }
 .tok-punct { color: var(--term-green); font-weight: bold; }
 .tok-tag { color: var(--accent-blue); font-weight: 600; margin-right: 8px; }
 
-/* FIX: Constrain the ASCII art so it doesn't blow up the page */
+/* Constrain the ASCII art so it doesn't blow up the page */
 .right-side {
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ footer.site a:hover { color: var(--accent-blue); }
 
 .ascii-placeholder {
     font-family: var(--font-mono);
-    font-size: 6.5px; /* Scaled down to fit */
+    font-size: 6.5px; 
     line-height: 6.5px;        
     color: var(--text-main);
     white-space: pre;        
@@ -168,7 +168,7 @@ footer.site a:hover { color: var(--accent-blue); }
    ========================================= */
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-top: 20px;
 }
@@ -241,6 +241,11 @@ footer.site a:hover { color: var(--accent-blue); }
     margin-bottom: 60px;
 }
 
+/* CRITICAL FIX: Forces the center column to respect grid boundaries */
+.dash-col.center {
+    min-width: 0; 
+}
+
 .dash-col.left { display: flex; flex-direction: column; gap: 15px; }
 .stat-box {
     border: 1px solid var(--border-color);
@@ -269,6 +274,7 @@ footer.site a:hover { color: var(--accent-blue); }
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    width: 100%;
 }
 .term-header-mini {
     background: #111111;
@@ -282,13 +288,21 @@ footer.site a:hover { color: var(--accent-blue); }
     padding: 15px;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    overflow-x: auto;
+    overflow-x: auto; /* Adds scrollbar for long paths */
     flex-grow: 1;
+    text-align: left; /* Fixes centered text */
+    width: 100%;
+    box-sizing: border-box;
 }
+
+/* CRITICAL FIX: Prevents pre tag from pushing width */
 .term-content-mini pre {
     margin: 0;
     color: #fdfdfd;
     line-height: 1.5;
+    text-align: left;
+    white-space: pre;
+    width: max-content;
 }
 
 .dash-col.right { display: flex; flex-direction: column; gap: 15px; }
