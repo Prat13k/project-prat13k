@@ -4,117 +4,115 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects | Pratik Patil</title>
-    <link rel="stylesheet" href="style.css">		
+    <meta name="description" content="A complete index of software, experiments, and independent products by Pratik Patil.">
+    
+    <!-- Scientific Modernism Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site">
-        <div class="wrap">
-            <a class="brand" href="index.html">
-                <h1><span class="prompt-symbol">~/</span>pratik</h1>
-            </a>				
-            <nav class="primary">
-                <a href="index.html">Home</a>
-                <a href="projects.html" aria-current="page">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-        
-    <main>    				
-        <div class="wrap">
-            <div class="terminal-command">
-                <span class="prompt">$</span> ls -la ~/projects
-            </div>
 
-            <!-- PROJECT GRID -->
-            <div class="project-grid">
+    <div class="wrap">
+        <!-- HEADER -->
+        <header class="site">
+            <a href="index.html" class="brand">~/pratik<span>.sci</span></a>
+            <nav class="primary">
+                <a href="index.html">Index</a>
+                <a href="research.html">Research</a>
+                <a href="writing.html">Writing</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="section-header" style="margin-top: 0;">Software & Independent Products</div>
+            
+            <div class="garden-grid">
                 
-                <!-- Project 1 -->
-                <a href="dedupr.html" class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Dedupr</div>
-                        <div class="project-arrow">→</div>
+                <!-- Project 1: Dedupr -->
+                <div class="note-card">
+                    <div class="note-meta">
+                        <span class="status status-evergreen">Evergreen</span>
+                        <span>Systems Engineering</span>
                     </div>
-                    <div class="project-desc">
-                        A zero-dependency Rust CLI that finds and removes duplicate files instantly using BLAKE3 hashing.
-                    </div>
-                    <div class="tech-stack">
+                    <a href="dedupr.html" class="note-title">Dedupr ↗</a>
+                    <p class="note-desc">
+                        A zero-dependency Rust CLI that finds and removes duplicate files instantly using BLAKE3 hashing. Leverages concurrent hashing and memory-mapped I/O to achieve 1.5 GB/s throughput with sub-second latency.
+                    </p>
+                    <div class="tech-tags">
                         <span class="tech-tag">Rust</span>
                         <span class="tech-tag">BLAKE3</span>
+                        <span class="tech-tag">Systems</span>
                         <span class="tech-tag">CLI</span>
                     </div>
-                </a>
+                </div>
 
-                <!-- Project 2 -->
-                <a href="#" class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Analysis Before Wicket</div>
-                        <div class="project-arrow">→</div>
+                <!-- Project 2: Analysis Before Wicket -->
+                <div class="note-card">
+                    <div class="note-meta">
+                        <span class="status status-budding">Budding</span>
+                        <span>Data Science</span>
                     </div>
-                    <div class="project-desc">
-                        A data-driven cricket analytics platform offering deep insights, performance analysis, and modern cricket intelligence.
-                    </div>
-                    <div class="tech-stack">
+                    <a href="#" class="note-title">Analysis Before Wicket</a>
+                    <p class="note-desc">
+                        A data-driven cricket analytics platform offering deep insights and match forecasting. Built with Go for a high-performance backend API and R/Python for statistical modeling and historical data extraction.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">Data Science</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Web App</span>
-                    </div>
-                </a>
-
-                <!-- Project 3 -->
-                <a href="#" class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Polymorph</div>
-                        <div class="project-arrow">→</div>
-                    </div>
-                    <div class="project-desc">
-                        An experimental Python-based architecture designed to transform and map complex data structures.
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Architecture</span>
-                        <span class="tech-tag">Backend</span>
-                    </div>
-                </a>
-
-                <!-- Project 4 (Balances the 2x2 Grid) -->
-                <a href="https://github.com/Prat13k" target="_blank" class="project-card" style="background: var(--strip-bg);">
-                    <div class="project-header">
-                        <div class="project-title">View All on GitHub</div>
-                        <div class="project-arrow">↗</div>
-                    </div>
-                    <div class="project-desc">
-                        Explore my other repositories, open-source contributions, and experimental scripts.
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">GitHub</span>
-                        <span class="tech-tag">Open Source</span>
-                    </div>
-                </a>
-
-            </div>
-
-            <!-- CONTACT SECTION (Moved outside the grid) -->
-            <section id="contact" class="contact-section">
-                <div class="contact-strip">
-                    <h2>Contact</h2>
-                    <p>Email is best. I read everything; replies may take a few days.</p>
-                    <div class="contact-links">
-                        <a href="mailto:pp8982patil@gmail.com">[Gmail]</a>
-                        <a href="https://github.com/Prat13k">[GitHub]</a>
-                        <a href="https://linkedin.com/in/Prat13k">[LinkedIn]</a>
                     </div>
                 </div>
-            </section>
 
-        </div>
-    </main>			
-        
-    <footer class="site">
-        <div class="wrap">
-            <span>Built from scratch — HTML, CSS <a href="https://github.com/Prat13k/project-prat13k">Source</a></span>
-            <span>&copy; 2026 Pratik</span>
-        </div>
-    </footer>	
+                <!-- Project 3: Polymorph -->
+                <div class="note-card">
+                    <div class="note-meta">
+                        <span class="status status-seedling">Experimental</span>
+                        <span>ML & Architecture</span>
+                    </div>
+                    <a href="#" class="note-title">Polymorph</a>
+                    <p class="note-desc">
+                        An experimental Python-based architecture designed to transform and map complex data structures. Features a blazing-fast REST API for image processing and ASCII generation, integrating Rust modules for compute-intensive tasks.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Rust</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: WhatToWatch -->
+                <div class="note-card">
+                    <div class="note-meta">
+                        <span class="status status-budding">Active</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <a href="#" class="note-title">WhatToWatch</a>
+                    <p class="note-desc">
+                        An ML-powered recommendation engine. Through an interactive, adaptive quiz, it analyzes user mood, pacing, and time commitment to find perfect movie matches using content-based filtering and Cosine Similarity.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Cosine Similarity</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>Built from scratch — HTML, CSS, Vanilla JS</span>
+            <span>&copy; 2026 Pratik Patil</span>
+        </footer>
+    </div>
+
 </body>
 </html>

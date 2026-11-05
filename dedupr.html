@@ -3,61 +3,79 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dedupr | Systems & Data</title>
-    <link rel="stylesheet" href="style.css">		
+    <title>Dedupr | Case Study</title>
+    <meta name="description" content="Case study: A zero-dependency Rust CLI that finds and removes duplicate files instantly using BLAKE3 hashing.">
+    
+    <!-- Scientific Modernism Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site">
-        <div class="wrap">
-            <a class="brand" href="index.html">
-                <h1><span class="prompt-symbol">~/</span>pratik</h1>
-            </a>				
+
+    <div class="wrap">
+        <!-- HEADER -->
+        <header class="site">
+            <a href="index.html" class="brand">~/pratik<span>.sci</span></a>
             <nav class="primary">
-                <a href="index.html">Home</a>
-                <a href="projects.html" aria-current="page">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Index</a>
+                <a href="research.html">Research</a>
+                <a href="contactus.html">Contact</a>
             </nav>
-        </div>
-    </header>
-        
-    <main>    				
-        <div class="wrap">
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="case-study-layout">
             
-            <!-- 1. THE WIDE TERMINAL COMMAND -->
-            <div class="terminal-command" style="margin-bottom: 20px; font-size: 1rem;">
-                <span class="prompt">$</span> cat projects/dedupr.md
-            </div>
-            
-            <!-- 2. THE DASHBOARD GRID -->
-            <div class="dashboard-grid">
+            <!-- LEFT SIDEBAR: METADATA -->
+            <aside class="project-sidebar">
+                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <h1 class="project-title">Dedupr</h1>
                 
-                <!-- LEFT COLUMN: STATS -->
-                <div class="dash-col left">
-                    <div class="stat-box">
-                        <div class="stat-val">100%</div>
-                        <div class="stat-label">Rust</div>
+                <div class="meta-list">
+                    <div class="meta-item">
+                        <span class="meta-label">Language</span>
+                        <span class="meta-value">Rust (100%)</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-val">BLAKE3</div>
-                        <div class="stat-label">Hashing</div>
+                    <div class="meta-item">
+                        <span class="meta-label">Algorithm</span>
+                        <span class="meta-value">BLAKE3 Hash</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-val">0</div>
-                        <div class="stat-label">Dependencies</div>
+                    <div class="meta-item">
+                        <span class="meta-label">Dependencies</span>
+                        <span class="meta-value">0</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-val">~500KB</div>
-                        <div class="stat-label">Binary Size</div>
+                    <div class="meta-item">
+                        <span class="meta-label">Binary Size</span>
+                        <span class="meta-value">~500 KB</span>
                     </div>
                 </div>
 
-                <!-- CENTER COLUMN (ACTUAL TERMINAL OUTPUT) -->
-                <div class="dash-col center">
-                    <div class="term-visual-box">
-                        <div class="term-header-mini">
-                            <span>bash - ./target/debug/dedupr-cli</span>
-                        </div>
-                        <div class="term-content-mini">
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.8; color: var(--text-muted);">
+                    <strong>FEATURES:</strong><br>
+                    • Dry-run mode<br>
+                    • Hard-link generation<br>
+                    • Safe deletion<br>
+                    • JSON / JSONL output<br>
+                    • Multi-language (i18n)
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT -->
+            <article class="project-content">
+                
+                <h2>Abstract</h2>
+                <p>
+                    Dedupr is a production-grade systems tool designed to solve storage bloat. Built entirely in Rust, it leverages <strong>BLAKE3</strong> hashing for mathematically zero-collision identification.
+                </p>
+                <p>
+                    By grouping files by size first and then hashing them concurrently across threads, Dedupr eliminates the O(N²) performance bottleneck of traditional duplicate finders. It features multiple output serialization formats (JSON/JSONL) for pipeline integration, localized translations, and safe, non-destructive dry-runs by default.
+                </p>
+
+                <h2>Terminal Output</h2>
+                <div class="code-block">
 <pre>
 <span style="color: #888;">$ cargo run -- --path /home/username/folder</span>
 Compiling dedupr-core v0.1.0
@@ -65,87 +83,52 @@ Compiling dedupr-i18n v0.1.0
 Compiling dedupr-cli v0.1.0
 Finished `dev` profile in 8.04s
 
-<span style="color: #ff8c00;">Found ⁨82⁩ duplicate groups.</span>
+<span style="color: #d97706; font-weight: bold;">Found ⁨82⁩ duplicate groups.</span>
 
-<span style="color: #00ff41;">Hash: 7845e904</span> (2 files)
+<span style="color: #059669; font-weight: bold;">Hash: 7845e904</span> (2 files)
 /home/.../renderer/assets/img/rstudio@2x.png
 /home/.../main/assets/img/rstudio@2x.png
 ----------------------
-<span style="color: #00ff41;">Hash: 1adda8b7</span> (2 files)
+<span style="color: #059669; font-weight: bold;">Hash: 1adda8b7</span> (2 files)
 /home/.../formats/pdf/pandoc/babel-lang.tex
 /home/.../formats/beamer/pandoc/babel-lang.tex
 ----------------------
-<span style="color: #00ff41;">Hash: 5e07abfa</span> (2 files)
+<span style="color: #059669; font-weight: bold;">Hash: 5e07abfa</span> (2 files)
 /home/.../formats/pdf/pandoc/biblio-config.tex
 /home/.../formats/beamer/pandoc/biblio-config.tex
 	
 <span style="color: #888;">... (79 more groups hidden) ...</span>
 
-<span style="color: #ff8c00;">Potential space savings: ⁬2014649⁩ bytes.</span>
+<span style="color: #d97706; font-weight: bold;">Potential space savings: ⁬2014649⁩ bytes.</span>
 </pre>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- RIGHT COLUMN: FEATURES -->
-                <div class="dash-col right">
-                    <div class="feature-box">
-                        <div class="feature-title">◆ FILE OPERATIONS</div>
-                        <p>Safe execution modes: <strong>Dry-run</strong>, <strong>Hard-link generation</strong>, and complete <strong>Deletion</strong>.</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-title">◆ DATA FORMATS</div>
-                        <p>Exportable results in standard <strong>Text</strong>, structured <strong>JSON</strong>, and streamable <strong>JSONL</strong>.</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-title">◆ INTERNATIONALIZATION</div>
-                        <p>Built-in <code>i18n</code> crate supporting <strong>English</strong>, <strong>Hindi</strong>, <strong>French</strong>, <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>Chinese</strong>.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. ABOUT THE PROJECT (ABSTRACT) -->
-            <section class="about-section" style="margin-top: 60px;">
-                <div class="terminal-command">
-                    <span class="prompt">$</span> cat abstract.md
-                </div>
-                <p class="lede">
-                    Dedupr is a production-grade systems tool designed to solve storage bloat. Built entirely in Rust, it leverages <strong>BLAKE3</strong> hashing for mathematically zero-collision identification. 
-                    <br><br>
-                    By grouping files by size first and then hashing them concurrently across threads, Dedupr eliminates the O(N²) performance bottleneck of traditional duplicate finders. It features multiple output serialization formats (JSON/JSONL) for pipeline integration, localized translations, and safe, non-destructive dry-runs by default.
-                </p>
-            </section>
-
-            <!-- 4. UNDER THE HOOD (ARCHITECTURE) -->
-            <section class="section" style="margin-top: 60px;">
-                <div class="terminal-command">
-                    <span class="prompt">$</span> cat architecture.txt
+                <h2>Architecture</h2>
+                
+                <div class="arch-item">
+                    <h3>1. Workspace Architecture</h3>
+                    <p>The project is split into modular crates: <code>dedupr-core</code> (logic), <code>dedupr-i18n</code> (translations), and <code>dedupr-cli</code> (interface). This ensures separation of concerns and testability.</p>
                 </div>
                 
-                <div class="arch-list">
-                    <div class="arch-item">
-                        <div class="arch-title">1. Workspace Architecture</div>
-                        <p>The project is split into modular crates: <code>dedupr-core</code> (logic), <code>dedupr-i18n</code> (translations), and <code>dedupr-cli</code> (interface). This ensures separation of concerns and testability.</p>
-                    </div>
-                    <div class="arch-item">
-                        <div class="arch-title">2. Concurrent Hashing Pipeline</div>
-                        <p>Files with matching sizes are passed to a thread pool via <code>rayon</code>. BLAKE3 splits the file into chunks and hashes them in parallel, saturating the CPU and disk I/O for maximum throughput.</p>
-                    </div>
-                    <div class="arch-item">
-                        <div class="arch-title">3. Multi-Format Serialization</div>
-                        <p>Using <code>serde</code>, the hash map results are cleanly serialized into JSON, JSONL (for database ingestion), or formatted CLI text with localized strings injected dynamically.</p>
-                    </div>
+                <div class="arch-item">
+                    <h3>2. Concurrent Hashing Pipeline</h3>
+                    <p>Files with matching sizes are passed to a thread pool via <code>rayon</code>. BLAKE3 splits the file into chunks and hashes them in parallel, saturating the CPU and disk I/O for maximum throughput.</p>
                 </div>
-            </section>
+                
+                <div class="arch-item">
+                    <h3>3. Multi-Format Serialization</h3>
+                    <p>Using <code>serde</code>, the hash map results are cleanly serialized into JSON, JSONL (for database ingestion), or formatted CLI text with localized strings injected dynamically.</p>
+                </div>
 
-        </div>
-    </main>			
-        
-    <footer class="site">
-        <div class="wrap">
-            <span>Built from scratch — HTML, CSS <a href="#">Source</a></span>
-            <span>&copy; 2026 Pratik</span>
-        </div>
-    </footer>	
+            </article>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>Built from scratch — HTML, CSS, Vanilla JS</span>
+            <span>&copy; 2026 Pratik Patil</span>
+        </footer>
+    </div>
+
 </body>
 </html>

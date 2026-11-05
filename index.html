@@ -3,117 +3,149 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal technical site of Pratik.">
-    <title>Pratik Patil</title>
-    <link rel="stylesheet" href="style.css">		
+    <title>Pratik Patil | Computational Scientist</title>
+    <meta name="description" content="Independent computational scientist, data scientist, and systems engineer.">
+    
+    <!-- Scientific Modernism Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header class="site">
-        <div class="wrap">
-            <a class="brand" href="index.html">
-                <h1><span class="prompt-symbol">~/</span>pratik</h1>
-            </a>				
-            
+
+    <div class="wrap">
+        <!-- HEADER -->
+        <header class="site">
+            <a href="index.html" class="brand">~/pratik<span>.sci</span></a>
             <nav class="primary">
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="projects.html">Projects</a>
-<!--            <a href="research.html">Research</a> 		-->
-                <a href="#contact">Contact</a>
+                <a href="index.html" class="active">Index</a>
+                <a href="research.html">Research</a>
+                <a href="writing.html">Writing</a>
+                <a href="contactus.html">Contact</a>
             </nav>
-        </div>
-    </header>
-        
-    <main>    				
-        <div class="wrap">
-            <!-- HERO -->
-            <section class="hero">
-                <pre class="doc">
-                    <span class="tok-punct"> * </span><span class="tok-tag">@name</span>   <span class="tok-str">Pratik Patil</span>
-                    <span class="tok-punct"> * </span><span class="tok-tag">@role</span>   <span class="tok-str">Data science · Machine Learning · Systems</span>
-                    <span class="tok-punct"> * </span><span class="tok-tag">@degree</span> <span class="tok-str">M.Tech, Data Science (2022)</span>
-                    <span class="tok-punct"> * </span><span class="tok-tag">@status</span> <span class="tok-str">Building, learning, occasionally shipping</span>
-                </pre>
-                
-                <!-- RIGHT SIDE: ASCII Image + Resume Button -->
-                <div class="right-side">
-                    <div class="ascii-face">
-                        <div class="ascii-placeholder">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓██████████████▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░▓▓████████████████████████▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░▒███████████████████████████▓▒░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░▓███████████████████████████▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░▒▓████████████████████████▓▓▓▒▒▒░░░░░░░░░░░░░░░░▒▒▒░░▒▒▒
-░░░░░░░░░░░░░░░░░░░▒▓█████████████████▓▓███▓▓▓▓▓▓▓▒░░░░░░░▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░▓███████████████▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░▒███████████████▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▓█████████████▓▓▓▓▓████████▓▓▓▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░░▒███▓▓▓█████▓▓▓▓▓█████████▓▓▓▓▒░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░░░▓█▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓█████▓▓▓▓▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░
-▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓░░░░░░░░░░░░░░░░░░░░░░░░░░
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▒░░░░░░░░░░░░░░░░░░░▒░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▒▒░░░░░░░░▒▒▒░░░▒▒░░▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒░░░░░░░░░░░░░░░░░░░░░▒░▒▒▒
-░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓███████████▓▓██▓░░░░░░░░░░░░░░░▒░░░▒▒░░░▒▒
-░░░░░░░░░░░░░░░░░░░░░░░▒▒█▓▓▓▓▓▓▓▓▓█████████████▒░░░░░░░░░░░░░░▒▒░░░▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░░░▒▒▓█▓▓▓▓▓▓▓▓▓▓▓█████████▓▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓███▓▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░░░░▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓██▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓██▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▒▒▒▒▒▒▒▒▒▒▒▒▒
-░░▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▒▒▒▒▒▒▒▒▒▒▒▒▒
-░▒▓▓▓▓▓▓█▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▒▒▒▒▒▒▒▒▒▒▒▒
-░▒▓▓▓▓▓▓██▓█▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓████▓▓▓▒▒▒▒▒▒▒▒▒▒▒
-░▓▓▓▓▓▓▓▓█▓▓██▓▓█▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓████▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒
-▒▓▓▓▓▓▓▓▓█▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████▒▒▒▒▒▒▒▒▒▒▒▒▒
-▒▓▓▓▓▓▓▓▓▓██▓██████▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒
-░▒▓▓▓▓▓▓▓▓▓▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒
-░▒▓▓▓▓▓▓▓▓▓██▓▓█████▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒
-░▒▓▓▓▓▓█▓▓▓██▓█████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▒▓██▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒</div>
-                    </div>
-                    
-                    <!-- RESUME DOWNLOAD BUTTON -->
-                    <a href="resume.pdf" download class="resume-btn">[ DOWNLOAD_RESUME ]</a>
-                </div>	
-            </section>
+        </header>
 
-            <!-- ABOUT SECTION -->
-            <section class="about-section">
-                <div class="terminal-command">
-                    <span class="prompt">$</span> cat about.md
+        <!-- MAIN HERO -->
+        <main class="hero-grid">
+            <!-- LEFT: SCIENTIFIC IDENTITY -->
+            <div class="hero-left">
+                <h1>Pratik Patil</h1>
+                <div class="role">
+                    Computational Scientist<br>
+                    Data Science · Machine Learning · Systems
                 </div>
-                <p class="lede">My interests span scientific computing, research, and system programming. I focus on data science, machine learning, and deep learning, alongside low-level software, compilers, and operating systems. I also maintain a strong interest in the mechanics and design of games.</p>	  		 
-            </section>
+                <p>
+                    My work spans scientific computing, machine learning, and system programming. I build high-performance tools in Rust and Go, design predictive models using Python, and investigate complex data structures. 
+                </p>
+                <p>
+                    I am driven by a philosophy of turning complexity into simplicity, bridging the gap between low-level system efficiency and high-level data intelligence.
+                </p>
+                <a href="PratikPatilResume.pdf" download class="btn-cv">[ Download Curriculum Vitae ]</a>
+            </div>
 
-            <!-- CONTACT -->	
-            <section class="section" id="contact">
-                <div class="contact-strip">
-                    <h2>Contact</h2>
-                    <p>Email is best. I read everything; replies may take a few days.</p>
-                    <div class="contact-links">
-                        <a href="mailto:pp8982patil@gmail.com">[Gmail]</a>
-                        <a href="https://github.com/Prat13k">[GitHub]</a>
-                        <a href="https://linkedin.com/in/Prat13k">[LinkedIn]</a>
-                    </div>
+            <!-- RIGHT: THE INTERACTIVE KNOWLEDGE GRAPH -->
+            <div class="hero-right">
+                <div class="graph-container">
+                    <div class="graph-label">Knowledge Graph // Interactive</div>
+                    <canvas id="graphCanvas"></canvas>
                 </div>
-            </section>
+            </div>
+        </main>
+
+        <!-- SECTION: DIGITAL GARDEN -->
+        <div class="section-header">Active Research & Digital Garden</div>
+        <div class="garden-grid">
+            
+            <!-- NOTE 1 -->
+            <div class="note-card">
+                <div class="note-meta">
+                    <span class="status status-evergreen">Evergreen</span>
+                    <span>Systems Engineering</span>
+                </div>
+                <a href="dedupr.html" class="note-title">Dedupr: BLAKE3 File Deduplication</a>
+                <p class="note-desc">
+                    A zero-dependency CLI tool built in Rust. Utilizes concurrent hashing and memory-mapped I/O to find and remove duplicate files at 1.5 GB/s, reducing disk usage by 90% with sub-second latency.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">BLAKE3</span>
+                    <span class="tech-tag">Systems</span>
+                </div>
+            </div>
+
+            <!-- NOTE 2 -->
+            <div class="note-card">
+                <div class="note-meta">
+                    <span class="status status-budding">Budding</span>
+                    <span>Machine Learning</span>
+                </div>
+                <a href="#" class="note-title">RAG Architectures & AI Agents</a>
+                <p class="note-desc">
+                    Investigating retrieval-augmented generation pipelines for domain-specific knowledge bases. Focus on minimizing vector database latency and handling context window limitations using Python.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">LLMs</span>
+                </div>
+            </div>
+
+            <!-- NOTE 3 -->
+            <div class="note-card">
+                <div class="note-meta">
+                    <span class="status status-seedling">Seedling</span>
+                    <span>Data Science</span>
+                </div>
+                <a href="#" class="note-title">Cricket Analytics & Time-Series</a>
+                <p class="note-desc">
+                    Building predictive models for match outcomes using historical ball-by-ball data. A study in handling sparse, high-variance datasets. Engineered with R for statistical modeling and Go for the backend API.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">R</span>
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">Forecasting</span>
+                </div>
+            </div>
+
+            <!-- NOTE 4 -->
+            <div class="note-card">
+                <div class="note-meta">
+                    <span class="status status-budding">Budding</span>
+                    <span>Deep Learning</span>
+                </div>
+                <a href="#" class="note-title">Neural Network Optimization</a>
+                <p class="note-desc">
+                    Experimenting with PyTorch to optimize inference speeds for edge devices. Exploring quantization, pruning, and knowledge distillation techniques without significant loss in accuracy.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">DL</span>
+                    <span class="tech-tag">PyTorch</span>
+                </div>
+            </div>
+
+        </div> <!-- END OF GARDEN-GRID -->
+
+        <!-- FULL ARCHIVE LINK -->
+        <div style="margin-top: 40px; text-align: right; font-family: var(--font-mono); font-size: 0.85rem;">
+            <a href="projects.html" style="color: var(--text-muted); text-decoration: none; border-bottom: 1px dashed var(--text-muted); padding-bottom: 2px; transition: all 0.2s;">
+                [ View complete project archive → ]
+            </a>
         </div>
-    </main>			
-        
-    <footer class="site">
-        <div class="wrap">
-            <span>Built from scratch — HTML, CSS <a href="https://github.com/Prat13k/project-prat13k">Source</a></span>
-            <span>&copy; 2026 Pratik · last updated September 2026</span>
-        </div>
-    </footer>	
+
+    </div> <!-- END OF MAIN WRAP -->
+
+    <div class="wrap">
+        <footer>
+            <span>Built from scratch — HTML, CSS, Vanilla JS</span>
+            <span>&copy; 2026 Pratik Patil</span>
+        </footer>
+    </div>
+
+    <!-- Load the separate JS file -->
+    <script src="graph.js"></script>
 </body>
 </html>
