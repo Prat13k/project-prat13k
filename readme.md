@@ -11,8 +11,6 @@
   <br>
 </div>
 
----
-
 ### `>_ SYSTEM_SPECIFICATIONS`
 
 ```json
